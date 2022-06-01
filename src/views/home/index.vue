@@ -1,6 +1,7 @@
 <template>
   <h1>首页</h1>
   <!-- <h1>{{ $store.state.count }}</h1> -->
+  <el-button>按钮</el-button>
 </template>
 
 <script lang="ts" setup>

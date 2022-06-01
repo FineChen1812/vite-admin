@@ -1,4 +1,5 @@
 import request from '@/utils/request';
+import { ILoginInfo } from './types/common';
 
 // interface ResponseData<T = any> {
 //   status: number
@@ -6,15 +7,12 @@ import request from '@/utils/request';
 //   data: T
 // }
 
+
+
 export const getLoginInfo = () => {
-  return request<{
-      logo_square: string
-      logo_rectangle: string
-      login_logo: string
-      slide: string[]
-    }>({
+  return request<ILoginInfo>({
     method: 'GET',
-    url: '/login/info',
+    url: '/admin/login/info',
   })
   // return request.get<{
   //   status: number
