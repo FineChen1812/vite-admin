@@ -7,6 +7,7 @@
       <el-container>
         <el-header> 
           <ToggleSidebar/>
+          <Breadcrumb/>
         </el-header>
         <el-main>
           <router-view></router-view>
@@ -16,6 +17,7 @@
   </div>
 </template>
 <script lang='ts' setup>
+import Breadcrumb from './AppHeader/Breadcrumb.vue';
 import ToggleSidebar from "./AppHeader/ToggleSidebar.vue";
 import AppMenu from './AppMenu/index.vue';
 </script>

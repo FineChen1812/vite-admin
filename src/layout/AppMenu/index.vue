@@ -25,8 +25,8 @@
         <el-icon><Tools /></el-icon>
       <span>页面二</span>
       </template>
-      <el-menu-item index="1-4-1">item one</el-menu-item>
-      <el-menu-item index="1-4-1">item two</el-menu-item>
+      <el-menu-item index="/menuTwo/one">item one</el-menu-item>
+      <el-menu-item index="/menuTwo/two">item two</el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>

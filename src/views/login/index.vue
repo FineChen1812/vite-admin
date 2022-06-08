@@ -6,6 +6,11 @@
 import { getLoginInfo} from '@/api/common';
 import type { ILoginInfo } from '@/api/types/common';
 import { onMounted,ref } from 'vue';
+import { ElForm } from 'element-plus';
+
+
+// 拿到form表单的类型
+const form = ref<InstanceType <typeof ElForm> | null>(null)
 
 const list = ref<ILoginInfo['slide']>([])
 

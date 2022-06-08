@@ -1,23 +1,30 @@
 import { RouteRecordRaw, RouterView } from 'vue-router';
 
-const routes: RouteRecordRaw[] = [
-  {
-    path:'menuTwo',
-    name: '',
+const routes: RouteRecordRaw = {
+    path:'/menuTwo',
+    name: 'menuTwo',
+    meta: {
+      title: 'menuTwo'
+    },
     component: RouterView,
     children:[
       {
         path: 'one',
-        name: 'one',
-        component: () => import('../../views/menuTwo/one.vue'),
+        name: 'twoOne',
+        component: () => import('@/views/menuTwo/one.vue'),
+        meta: {
+          title: 'one'
+        }
       },
       {
         path: 'two',
-        name: 'two',
-        component: () => import('../../views/menuTwo/two.vue'),
+        name: 'twoTwo',
+        component: () => import('@/views/menuTwo/two.vue'),
+        meta: {
+          title: 'two'
+        }
       },
     ]
   }
-]
 
 export default routes

@@ -15,5 +15,6 @@ const handleCollapse = () => {
 .el-icon{
   font-size: 24px;
   cursor: pointer;
+  margin-right: 10px;
 }
 </style>

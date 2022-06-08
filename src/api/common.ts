@@ -22,10 +22,10 @@ export const getLoginInfo = () => {
   //     slide: string[]
   //   }
   // }>('/login/info')
-  // return request.get<ResponseData<{
-  //   logo_square: string
-  //   logo_rectangle: string
-  //   login_logo: string
-  //   slide: string[]
-  // }>>('/login/info')
+  return request.get<ResponseData<{
+    logo_square: string
+    logo_rectangle: string
+    login_logo: string
+    slide: string[]
+  }>>('/login/info')
 }
