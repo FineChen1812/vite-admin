@@ -13,7 +13,8 @@ const routes: RouteRecordRaw = {
         name: 'twoOne',
         component: () => import('@/views/menuTwo/one.vue'),
         meta: {
-          title: 'one'
+          title: 'one',
+          requiresAuth: true 
         }
       },
       {

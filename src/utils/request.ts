@@ -1,4 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
+import { ElMessage } from 'element-plus';
+import { store } from '@/store';
 
 
 // request 不支持泛型
@@ -11,6 +13,10 @@ const request = axios.create({
 request.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
   // 统一设置用户身份 token
+  const user = store.state.user
+  if(user && user.token) {
+    if(config.headers)config.headers.Authorization = `Bearer ${user.token}`
+  }
   return config;
 }, function (error) {
   // 对请求错误做些什么
@@ -19,8 +25,23 @@ request.interceptors.request.use(function (config) {
 
 // 添加响应拦截器
 request.interceptors.response.use(function (response) {
-  // 对响应数据做点什么
+  const status = response.data.status
+  // 正常情况
+  if(!status || status === 200) {
+    return response
+  }
+  // 错误情况
+
+
+  // 其他错误情况
+    ElMessage.error(response.data.msg || '请求失败')
+    return Promise.reject(response.data)
+
   // 统一处理接口响应错误,如token过期、服务端异常
+  // if(response.data.status && response.data.status !== 200) {
+  //   ElMessage.error(response.data.msg || '请求失败')
+  //   return Promise.reject(response.data)
+  // }
   return response;
 }, function (error) {
   // 对响应错误做点什么

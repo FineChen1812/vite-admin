@@ -5,7 +5,8 @@ const routes: RouteRecordRaw = {
     name: 'menuOne',
     component: RouterView,
     meta: {
-      title: '页面一'
+      title: '页面一',
+      requiresAuth: true 
     },
     children:[
       {
